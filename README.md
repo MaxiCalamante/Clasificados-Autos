@@ -10,3 +10,5 @@ INTEGRANTES:
 
 LUIS OSES - 43909208
 MAXIMO CALAMANTE - 44377817
+
+![Diagrama](https://github.com/user-attachments/assets/614c635d-02ac-408f-9def-df0c71c5b8b9)
