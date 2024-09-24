@@ -10,5 +10,6 @@ desventajas.
 
 ![db](https://github.com/user-attachments/assets/a91c04b9-04b5-4d68-93f6-0bba7e9b2f7d)
 
-Integrantes: Maximo Calamante 44377&17
-             Luis Oses 43909208
+Integrantes:
+- Maximo Calamante 44377317
+- Luis Oses 43909208
