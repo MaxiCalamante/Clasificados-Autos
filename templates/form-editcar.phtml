@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/TPEWEB2/css/editcar.css">
+    <title>Editar Auto</title>
+</head>
+<body>
+    <div class="edit-car-container">
+        <form action="<?= BASE_URL ?>updateCar" method="POST" class="form-container">
+            <h2>Editar Vehículo</h2>
+
+            <input type="hidden" name="ID_Modelo" value="<?= htmlspecialchars($car->ID_Modelo) ?>">
+            
+            <div class="form-group">
+                <label for="ID_Marca">Marca:</label>
+                <select name="ID_Marca" id="ID_Marca" required>
+                    <?php foreach ($brands as $brand): ?>
+                        <option value="<?= htmlspecialchars($brand->ID_Marca) ?>" <?= $brand->ID_Marca == $car->ID_Marca ? 'selected' : '' ?>>
+                            <?= htmlspecialchars($brand->Marca) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Modelo">Modelo:</label>
+                <input type="text" name="Modelo" value="<?= htmlspecialchars($car->Modelo) ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Motor">Motor:</label>
+                <input type="text" name="Motor" value="<?= htmlspecialchars($car->Motor) ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Combustible">Combustible:</label>
+                <input type="text" name="Combustible" value="<?= htmlspecialchars($car->Combustible) ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Transmision">Transmisión:</label>
+                <input type="text" name="Transmision" value="<?= htmlspecialchars($car->Transmision) ?>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Tipo">Tipo:</label>
+                <input type="text" name="Tipo" value="<?= htmlspecialchars($car->Tipo) ?>" required>
+            </div>
+
+            <button type="submit" class="btn">Guardar cambios</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/disenioform.css"> 
+   
+</head>
+<body>
+
+    <form action="addBrand" method="POST" class="form-container">
+        <h2>Marca Del Fabricante</h2>
+        
+        <label for="nueva_marca">Añadir nueva marca</label>
+        <input type="text" name="nueva_marca" id="nueva_marca" required placeholder="Ingresar marca">
+       <button type="submit" class="btn">Agregar</button>
+    </form>
+    
+    <form action="addCar" method="POST" class="form-container">
+        <h2>Añadir Nuevo Vehiculo</h2>
+        <label for="ID_Marca">Marca:</label>
+        <select name="ID_Marca" id="ID_Marca" required>
+            <option value="">Selecciona una marca</option>
+            <?php foreach ($brands as $brand): ?>
+                <option value="<?= $brand->ID_Marca ?>"><?= $brand->Marca ?></option>
+            <?php endforeach; ?>
+        </select>
+
+        <div class="form-group">
+            <label for="modelo">Modelo</label>
+            <input required name="Modelo" type="text" class="form-control" placeholder="Ingresa modelo">
+        </div>
+
+        <div class="form-group">
+            <label for="motor">Motor</label>
+            <input required name="Motor" type="text" class="form-control" placeholder="Ingresa motor">
+        </div>
+
+        <div class="form-group">
+            <label for="combustible">Combustible</label>
+            <input required name="Combustible" type="text" class="form-control" placeholder="Ingresa combustible">
+        </div>
+
+        <div class="form-group">
+            <label for="transmision">Transmisión</label>
+            <input required name="Transmision" type="text" class="form-control" placeholder="Ingresa transmisión">
+        </div>
+
+        <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <input required name="Tipo" type="text" class="form-control" placeholder="Ingresa tipo">
+        </div>
+
+        <button type="submit" class="btn">Agregar</button>
+    </form>
+
+</body>
+</html>

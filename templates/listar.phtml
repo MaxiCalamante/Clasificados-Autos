@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Autos</title>
+    <link rel="stylesheet" href="/TPEWEB2/css/disenioweb.css"> 
+    <link rel="stylesheet" href="/TPEWEB2/css/filter.css">
+    
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Listado de Autos</h1>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li>
+                        <a href="showLogin">Logearse</a>
+                    </li>
+                    <li>
+                        <a href="registerUser">Registrarse</a>
+                    </li>
+                    <li>
+                        <a href="logOut">Desconectarse</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="cars-list">
+            <?php  if (is_array($cars) && !empty($cars)) {
+                    echo '<ul>';
+                    foreach ($cars as $car) {
+                        echo '<li class="car-item">' . 
+                        '<h2>' . htmlspecialchars($car->Marca) . ' - ' . htmlspecialchars($car->Modelo) . '</h2>' . 
+                        '<a href="deleteCar/'. htmlspecialchars($car->ID_Modelo) . 'type="button" class="btn btn-danger btn-sm ml-auto">Borrar</a>' .
+                        '<a> - </a>'.
+                        '<a href="editCar/'. htmlspecialchars($car->ID_Modelo) . '" type="button" class="btn btn-primary btn-sm ml-auto">Modificar</a>' .
+                        '<a> - </a>'.
+                        '<a href="carDetails/'. htmlspecialchars($car->ID_Modelo) . '" class="btn btn-info">Mas detalles</a>' .
+                        '</li>';
+                        }
+                    echo '</ul>';
+                }
+            ?>
+        </section>
+        
+        <div class="filter-section">
+            <h1>Filtrar Autos</h1>
+            <buttom class="filter-toggle">Mostrar Filtros</buttom>
+            <form action="filterCars" method="POST" class="filter-form" style="display: none;">
+                <label for="ID_Marca">Marca:</label>
+                <select name="ID_Marca" id="ID_Marca">
+                    <option value="">Todas</option>
+                    <?php foreach ($brands as $brand): ?>
+                        <option value="<?= $brand->ID_Marca ?>"><?= $brand->Marca ?></option>
+                    <?php endforeach; ?>
+                </select>
+
+                <label for="Tipo">Tipo de Vehículo:</label>
+                <input type="text" name="Tipo" placeholder="Tipo de Vehículo">
+
+                <label for="Combustible">Combustible:</label>
+                <input type="text" name="Combustible" placeholder="Combustible">
+
+                <label for="Transmision">Transmisión:</label>
+                <input type="text" name="Transmision" placeholder="Transmisión">
+
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </form>
+            <form> 
+                <a href="listar" type="submit">Home</a>
+            </form>                
+        </div>       
+    </div>
+    
+    
+    
+    <div class="container">
+        <h2>Eliminar marca</h2>
+            <form action="deleteBrand" method="POST">
+                <select name="ID_Marca" id="ID_Marca"> 
+                <option value="">Todas</option>
+                    <?php foreach ($brands as $brand): ?>
+                        <option value="<?= $brand->ID_Marca ?>"><?= $brand->Marca ?></option> 
+                    <?php endforeach; ?>
+                </select>
+                <button type="submit">Eliminar Marca</button>
+            </form>
+
+        <h2>Modificar marca</h2>
+            <form method="POST" action="updateBrand">
+                <select name="ID_Marca" id="ID_Marca"> 
+                    <?php foreach ($brands as $brand): ?>
+                        <option value="<?= $brand->ID_Marca ?>"><?= $brand->Marca ?></option> 
+                    <?php endforeach; ?>
+                </select>
+                <input type="text" name="Marca" placeholder="Nuevo nombre" required> 
+                <button type="submit">Modificar Marca</button>
+            </form>
+    </div>                   
+
+
+    <script src="js/menu.js"></script>
+    <script src="js/filter.js"></script>  
+</body>
+</html>

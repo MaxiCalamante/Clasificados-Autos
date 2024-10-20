@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Auto</title>
+    <link rel="stylesheet" href="/TPEWEB2/css/disenioform.css"> 
+</head>
+    <body>
+        <h1>Detalles del Auto</h1>
+
+        <div class="car-details">
+            <?php if ($car): ?>
+                <h2><?= htmlspecialchars($car->Modelo) ?></h2>
+                <h2><strong>Tipo de motor:</strong> <?= htmlspecialchars($car->Motor) ?></h2>
+                <h2><strong>Tipo de combustible:</strong> <?= htmlspecialchars($car->Combustible) ?></h2>
+                <h2><strong>Modelo de transmisión:</strong> <?= htmlspecialchars($car->Transmision) ?></h2>
+                <h2><strong>Clase o Segmento del vehiculo:</strong> <?= htmlspecialchars($car->Tipo) ?></h2>
+            <?php else: ?>
+                <p>No se encontraron detalles para este auto.</p>
+            <?php endif; ?>
+            <form action="<?= BASE_URL ?>listar" class="form-container">
+                <button type="submit" class="btn">Volver</button>
+            </form>  
+        </div>
+    </body>
+</html>

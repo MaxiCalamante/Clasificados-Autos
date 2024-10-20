@@ -1,0 +1,14 @@
+.filter-section {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.filter-form {
+    display: none; 
+    margin-top: 10px;
+}
+.filter-toggle {
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: underline;
+}

@@ -1,0 +1,182 @@
+.menu {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    display: none; /* El menú está oculto inicialmente */
+    width: 200px;
+}
+
+.menu.active {
+    display: block; /* El menú se mostrará cuando tenga la clase 'active' */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li:last-child {
+    border-bottom: none;
+}
+
+
+.menu ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para el cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Menú hamburguesa */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Menú desplegable */
+.menu {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    display: none;
+    width: 200px;
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li:last-child {
+    border-bottom: none;
+}
+
+.menu ul li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.menu ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.cars-list {
+    margin-top: 20px; 
+}
+
+.cars-list ul {
+    list-style: none; 
+    padding: 0; 
+}
+
+.cars-list ul li {
+    background-color: #f9f9f9; 
+    margin-bottom: 15px; 
+    padding: 20px; 
+    border-radius: 8px; 
+    border: 1px solid #ddd; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    text-align: center;
+}
+
+.cars-list ul li:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.car-item h2 {
+    font-size: 1.6rem; 
+    color: #2c3e50; 
+    margin-bottom: 10px; 
+}
+
+.car-item p {
+    margin: 5px 0; 
+    color: #555; 
+}
+
+.car-item p strong {
+    color: #333; 
+    font-weight: bold; 
+}
+
+
