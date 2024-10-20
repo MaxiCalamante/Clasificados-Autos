@@ -16,4 +16,4 @@ Integrantes:
 
 TPE Parte 2:
 Para desplegar correctamente el TPE se debe importar la base de datos que se encuentra en la carpeta "DATABASE" una vez realizado este paso arrastrar todos los archivos a la carpeta htdocs de xamp. 
-Una vez realizados estos pasos entrar a xamp y prender el serbidor apache y el phpmyadmin
+Una vez realizados estos pasos entrar a xamp y prender el serbidor apache y el phpmyadmin.
